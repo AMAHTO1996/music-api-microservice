@@ -47,7 +47,7 @@ public class MusicAPIServiceImp implements MusicAPIService{
 	@Override
 	public MusicAPIDO getMusic(String id) {
 		MusicAPIDO musicAPIDO = null;
-		if(!musicAPIDAO.findById(id).isEmpty()) {
+		if(musicAPIDAO.findById(id)!=null) {
 			 musicAPIDO = musicAPIDAO.findById(id).get();
 		}else {
 			return null;
@@ -114,33 +114,33 @@ public class MusicAPIServiceImp implements MusicAPIService{
 	@Override
 	public MusicAPIDO updateMusic(MusicAPIDO MusicAPIdO, String id) {
 		MusicAPIDO musicAPIDO = null;
-		if(!musicAPIDAO.findById(id).isEmpty()) {
+		if(musicAPIDAO.findById(id)!=null) {
 			 musicAPIDO = musicAPIDAO.findById(id).get();
-			 if(null!=MusicAPIdO && !MusicAPIdO.getAdd_field1().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getAdd_field1()!=null)
 				 musicAPIDO.setAdd_field1(MusicAPIdO.getAdd_field1());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getAdd_field1().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getAdd_field1()!=null)
 				 musicAPIDO.setAdd_field1(MusicAPIdO.getAdd_field1());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getAdd_field2().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getAdd_field2()!=null)
 				 musicAPIDO.setAdd_field2(MusicAPIdO.getAdd_field2());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getAdd_field3().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getAdd_field3()!=null)
 				 musicAPIDO.setAdd_field3(MusicAPIdO.getAdd_field3());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getAdd_field4().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getAdd_field4()!=null)
 				 musicAPIDO.setAdd_field4(MusicAPIdO.getAdd_field4());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getAdd_field5().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getAdd_field5()!=null)
 				 musicAPIDO.setAdd_field5(MusicAPIdO.getAdd_field5());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getAdd_field6().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getAdd_field6()!=null)
 				 musicAPIDO.setAdd_field6(MusicAPIdO.getAdd_field6());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getSong_title().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getSong_title()!=null)
 				 musicAPIDO.setSong_title(MusicAPIdO.getSong_title());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getSong_desc().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getSong_desc()!=null)
 				 musicAPIDO.setSong_desc(MusicAPIdO.getSong_desc());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getSong_language().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getSong_language()!=null)
 				 musicAPIDO.setSong_language(MusicAPIdO.getSong_language());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getSong_artist().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getSong_artist()!=null)
 				 musicAPIDO.setSong_artist(MusicAPIdO.getSong_artist());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getSong_movie_name().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getSong_movie_name()!=null)
 				 musicAPIDO.setSong_movie_name(MusicAPIdO.getSong_movie_name());
-			 if(null!=MusicAPIdO && !MusicAPIdO.getSong_album_name().isEmpty())
+			 if(null!=MusicAPIdO && MusicAPIdO.getSong_album_name()!=null)
 				 musicAPIDO.setSong_album_name(MusicAPIdO.getSong_album_name());
 				 musicAPIDO.setUpdated_on(new Date());
 			 if(musicAPIDAO.save(musicAPIDO) != null) {
